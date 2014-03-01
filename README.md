@@ -29,7 +29,7 @@
 ╰─$ cd ~/Desktop/temp/scan/今周刊NO.871_jpg
 ```
 
-看一下目錄裡面的圖檔格式是否符合
+看一下目錄裡面的圖檔格式是哪種
 
 ```
 ╭─chun@Chuns-MacBook-Pro  ~/Desktop/temp/scan/今周刊NO.871_jpg
