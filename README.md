@@ -51,7 +51,7 @@ mag006.jpg mag013.jpg mag020.jpg mag027.jpg mag034.jpg mag041.jpg mag048.jpg mag
 ╰─$ bash /Users/chun/sh/level+deskew.sh jpg
 ```
 
-最後到 ```_converted_``` 資料夾中收成吧
+處理完後到 ```_converted_``` 資料夾中收成吧
 
 然後看最後是要用壓縮打包還是要轉成 PDF 都可以～
 
