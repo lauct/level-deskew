@@ -1,0 +1,19 @@
+#!/bin/bash
+read -p "RAR name you want:" zname
+#target RAR file name
+read -p "source Folders' name:" fname
+#source folder name
+read -p "Max volume #:" vnum
+#whole vol
+read -p "Beginning volume #:" bnum
+#vol start from ..
+echo -e "\nCompressing from vol.$bnum to vol.$vnum"
+#compressing tips
+	for ((i=$bnum; i<=$vnum; i=i+1))
+	do
+		rar a -m0 $zname$i.rar -r $fname$i/
+		#[JjPp]*
+		#compress code part
+
+		done
+exit 0

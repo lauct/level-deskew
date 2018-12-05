@@ -1,0 +1,19 @@
+#!/bin/bash
+read -p "Please enter Zip name:" zname
+#壓縮檔檔名
+read -p "Enter the comic Folders' name:" fname
+#來源資料夾
+read -p "Enter the comic's whole volume #:" vnum
+#總集數
+read -p "Enter the comic's beginning volume #:" bnum
+#開始集數
+echo -e "\nCompressing from vol.$bnum to vol.$vnum"
+#開始壓縮提示
+	for ((i=$bnum; i<=$vnum; i=i+1))
+	do
+		zip -r $zname$i.zip $fname$i/
+		#[JjPp]*
+		#壓縮程式段
+
+		done
+exit 0

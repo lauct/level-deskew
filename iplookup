@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ "$1" !=  "" ]; then
+	http ipinfo.io/$1
+else
+	echo "IP parameter is empty"
+fi
+

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+read -p "RAR name you want:" zname
+#target RAR file name
+read -p "source Folders' name:" fname
+#source folder name
+
+#read -p "insert how many digits?" digits
+#echo 1st:$digits
+
+read -p "Beginning volume #:" bnum
+#vol start from ..
+read -p "Max volume #:" vnum
+#whole vol
+
+echo -e "\nCompressing from vol.$bnum to vol.$vnum"
+#compressing tips
+	for ((i=$bnum; i<=$vnum; i=i+1))
+	do
+	
+	if [ $i -lt 10 ]
+        then    rar a $zname"0"$i.rar -r $fname"0"$i/
+    
+        else
+            rar a $zname$i.rar -r $fname$i/		  
+    fi  
+		#[JjPp]*
+		#compress code part
+
+    done
+exit 0
