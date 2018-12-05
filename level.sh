@@ -1,27 +1,33 @@
 #!/bin/sh
 
 ##################################################################
-# rarcomics.sh                                                   #
+# level.sh                                                #
 # Author: Lauct                                                  #
-# Purpose: Batch adjust color level for grayscale tiff			 #
+# Purpose: Batch adjust color level for pics					 #
 # Date: 2014.02.16                                               #
 ##################################################################
 
-# DirName=$(ls -l | grep ^d | awk '{print $9}')
 # for d in $DirName
-dir="gmconverted"
-echo $dir
+dir="_converted_"
+
 mkdir -p $dir
 
-echo "\033[1;36;40m###################################\033[0m\n"
-echo "\033[1;31;40m         Compressing files to $dir \033[0m\n" #tip something
-echo "\033[1;36;40m###################################\033[0m\n"
+if [[ -z $1 ]]; then
+	
+	echo "\033[1;36;40m請輸入欲處理的圖檔副檔名\033[0m\n";
+	exit 0;
+	
+	else 
+		echo "\033[1;36;40m處理過的圖檔將輸出至 $dir 目錄下\n"
+		echo "\033[1;36;40m###################################\033[0m\n";
+		echo "\033[1;31;40mAdjusting contrast files to $dir \033[0m\n";
+		echo "\033[1;36;40m###################################\033[0m\n";
+		
+		for file in *.$1 # you can change file type here
+		    do
+				convert -verbose $file -level 10% -quality 60% -alpha off $dir/$file.jpg
+		done
+fi
+say mission complete
 
-for file in *.png
-    do
-        # sleep 1
-		# gm convert  -verbose $file -level 15% -compress lzw  $dir/$file.tif
-		convert -verbose $file -level 15% -compress lzw  $dir/$file.tif
-        # rar a -m1 $d.rar -r $d/
-    done
-exit 0
+exit 8
