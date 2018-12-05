@@ -25,8 +25,10 @@ if [[ -z $1 ]]; then
 		
 		for file in *.$1 # you can change file type here
 		    do
-				convert -verbose $file -level 15% -quality 85% -alpha off +deskew $dir/$file.jpg
+				convert -verbose $file -level 15% -quality 65% -alpha off +deskew $dir/$file.jpg
 		done
 fi
-	
+
+WORKDIR=$(pwd)
+say -v 'samantha' "mission ${WORKDIR##*\/} completed"
 exit 0
